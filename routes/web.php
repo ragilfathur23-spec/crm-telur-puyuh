@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\ProdukController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,4 +19,5 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::resource('pelanggan', PelangganController::class);
+    Route::resource('produk', ProdukController::class);
 });
