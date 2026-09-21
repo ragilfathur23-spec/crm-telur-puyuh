@@ -16,4 +16,9 @@ class Produk extends Model
         'harga',
     ];
     //
+
+    public function detailPesanan()
+    {
+        return $this->hasMany(DetailPesanan::class);
+    }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\PesananController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,4 +21,5 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('pelanggan', PelangganController::class);
     Route::resource('produk', ProdukController::class);
+    Route::resource('pesanan', PesananController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
 });
